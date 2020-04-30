@@ -16,11 +16,15 @@ env:
     - CCACHE_DIR=$HOME/.ccache
     - ROS_REPO=ros
     - UPSTREAM_WORKSPACE=file
+    - BUILDER="colcon"
+    - CODE_COVERAGE="codecov.io"
+
   matrix:
-    - ROS_DISTRO="melodic"
+    - ROS_DISTRO="melodic" ROS_REPO="main"
+    - ROS_DISTRO="melodic" ROS_REPO="testing"
 
 install:
-  - git clone --quiet --depth=1 -b master https://github.com/ros-industrial/industrial_ci.git .ci_config
+  - git clone --quiet --depth=1 -b pr-coverage https://github.com/Briancbn/industrial_ci.git .ci_config
 
 script:
   - .ci_config/travis.sh
