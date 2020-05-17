@@ -11,13 +11,15 @@ git:
 
 env:
   global:
-    - BEFORE_INSTALL_TARGET_DEPENDENCIES='./install_opengr.sh'
     - CATKIN_LINT=true
     - CCACHE_DIR=$HOME/.ccache
-    - ROS_REPO=ros
-    - UPSTREAM_WORKSPACE=file
+    - UPSTREAM_WORKSPACE="rvip.repos"
+    - BUILDER=colcon
+    - ADDITIONAL_DEBS="ros-melodic-ros-environment"
+
   matrix:
-    - ROS_DISTRO="melodic"
+    - ROS_DISTRO="melodic" ROS_REPO=main
+    - ROS_DISTRO="melodic" ROS_REPO=testing
 
 install:
   - git clone --quiet --depth=1 -b master https://github.com/ros-industrial/industrial_ci.git .ci_config

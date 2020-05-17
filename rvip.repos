@@ -1,0 +1,9 @@
+repositories:
+  darknet_ros_msgs:
+    type: tar 
+    url: https://github.com/leggedrobotics/darknet_ros-release/archive/release/kinetic/darknet_ros_msgs/1.1.4-0.tar.gz
+    version: darknet_ros-release-release-kinetic-darknet_ros_msgs-1.1.4-0
+  OpenGR:
+    type: git
+    url: https://github.com/STORM-IRIT/OpenGR.git
+    version: 0967cd880950b35786b8fd098837c9eb1fe2aca4
